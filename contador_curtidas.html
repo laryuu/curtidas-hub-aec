@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      align-items: center;
+    }
+    button {
+      background-color: #EE4D2D;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 12px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    button:hover {
+      background-color: #d4432a;
+    }
+    #likeCount {
+      font-size: 12px;
+    }
+  </style>
+  <script>
+    function like() {
+      fetch('https://script.google.com/a/macros/shopee.com/s/AKfycbxVj5cVyxdwy3jHLixKtKe-2z7yPk3YomSBZgT2sRtpaFD7n64GEiIMOtFDDC0I-BO1/exec
+')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('likeCount').innerText = data;
+        });
+    }
+  </script>
+</head>
+<body>
+  <button onclick="like()">Curtir</button>
+  <p id="likeCount"> 0</p>
+</body>
+</html>
